@@ -1,14 +1,13 @@
-/* 
-
-    HashFunction -> ... 
-    Collisions handled using linked list
-
-*/
-
-#include <iostream> 
+#include <iostream>
+#include "HashTable.h"
 
 using namespace std;
 
 int main(){
-    return 0;   
+
+    HashTable myTable; 
+    myTable.insert(5);
+    myTable.printTable();
+    
+    return 0; 
 }
