@@ -1,11 +1,3 @@
-/* 
-
-    HashFunction -> modulo 
-    need array resize function 
-    Collisions handled using linked list
-
-*/
-
 #include <iostream> 
 using namespace std;
 
@@ -32,6 +24,7 @@ class HashTable{
         HashTable();
         void insert(int value);
         void printTable();
+        bool deleteVal(int value);
 
 };
 

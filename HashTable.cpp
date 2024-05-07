@@ -14,6 +14,30 @@ HashTable::HashTable(){
 
 }
 
+/*
+    Returns true if delete was successful or false if not
+*/
+bool HashTable::deleteVal(int value){
+
+    // Find hash value corresponding to the given value
+    int hashKey = hashFunction(value);
+
+    if(this->arr[hashKey] == nullptr){
+        return false;
+    }
+    else{
+
+        Node* currHead = this->arr[hashKey];
+
+        if(currHead->value == value){
+            // value to remove is the head of the linked list 
+            
+        }
+
+    }
+
+}
+
 void HashTable::printTable(){
 
     for(int i = 0; i < this->size; i++){
@@ -26,9 +50,11 @@ void HashTable::printTable(){
         else{
 
             while(currNode != nullptr){
-                cout << currNode->value << endl;
+                cout << currNode->value << "->";
                 currNode = currNode->next;
             }
+
+            cout << "NULL" << endl;
 
         }
 
@@ -57,7 +83,13 @@ void HashTable::insert(int value){
     if(this->arr[hashKey] != nullptr){
 
         // collision
-        cout << "collision" << endl;
+        Node* currHead = this->arr[hashKey];
+
+        while(currHead->next != nullptr){
+            currHead = currHead->next;
+        }
+
+        currHead->next = newNode;
 
     }
     else{
