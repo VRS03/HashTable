@@ -86,6 +86,10 @@ int HashTable::hashFunction(int key){
 
 }
 
+int HashTable::getSize(){
+    return this->size;
+}
+
 void HashTable::insert(int value){
 
     int hashKey = this->hashFunction(value);

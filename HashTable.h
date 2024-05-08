@@ -22,6 +22,7 @@ class HashTable{
 
     public: 
         HashTable();
+        int getSize();
         void insert(int value);
         void printTable();
         bool deleteVal(int value);
