@@ -31,7 +31,21 @@ bool HashTable::deleteVal(int value){
 
         if(currHead->value == value){
             // value to remove is the head of the linked list 
-            
+            this->arr[hashKey] = this->arr[hashKey]->next;
+            return true;
+        }
+        else{
+            // value to remove is in the linked list but not the head
+
+            while(currHead->next->value != value){
+
+                currHead = currHead->next;
+
+            }
+
+            currHead->next = currHead->next->next;
+            return true;
+
         }
 
     }
